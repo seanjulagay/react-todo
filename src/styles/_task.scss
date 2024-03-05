@@ -1,0 +1,59 @@
+@use "./variables" as *;
+
+.task {
+  background-color: white;
+  height: clamp(5rem, 8vh, 7rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  box-shadow: 0 1px 5px -1px lightgray;
+  margin-bottom: 1rem;
+  .task-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: $list-item-margin;
+    .task-text {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 3.2rem);
+      color: $font-gray;
+    }
+    .task-buttons {
+      display: flex;
+      gap: 1rem;
+      .task-button {
+        height: 4rem;
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(1rem, 90%, 2rem);
+        border-radius: 1rem;
+        color: white;
+        &.task-button-delete {
+          background-color: #d98686;
+        }
+        &.task-button-complete {
+          background-color: #9fe1a1;
+        }
+        &.task-button-hidden {
+          // opacity: 0;
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+.task-completed {
+  background-color: #9fe1a1;
+  .task-container {
+    .task-text {
+      text-decoration: line-through;
+      color: green;
+    }
+  }
+}

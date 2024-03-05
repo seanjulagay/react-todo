@@ -1,0 +1,51 @@
+@use "./variables" as *;
+@use "./queries" as *;
+
+.list-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .list {
+    background-color: rgba(255, 255, 255, 0.8);
+    min-height: 35rem;
+    min-width: 25rem;
+    width: 85vw;
+    height: 50vh;
+    border-radius: 1.5rem;
+
+    @include md {
+      width: 60rem;
+    }
+    .list-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .list-header {
+        margin: 2rem;
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-size: clamp(2.4rem, 8vw, 4rem);
+        color: $font-gray;
+      }
+      .list-tasks-container {
+        width: 90%;
+        display: grid;
+        column-gap: 2rem;
+        overflow-y: auto;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .counter {
+    margin-top: 1rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    color: white;
+    @include md {
+      margin-top: 2rem;
+    }
+  }
+}
